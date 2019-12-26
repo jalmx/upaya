@@ -1,0 +1,12 @@
+.section{
+    
+    padding: 2rem 1rem;
+    
+    &__title{
+        color: $primary-color;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: normal;
+        margin: 1rem 0;
+    }
+}

@@ -53,11 +53,11 @@ const sassTask = () => {
         .pipe(plumber())
         .pipe(postcss(postcssPlugins)).on('error', (e) => { console.log('error en la compilacion POST CSS'), e })
         .pipe(dest('./public/css'))
-        .pipe(server.stream({ match: '**/*.css' }))
+        // .pipe(server.stream({ match: '**/*.css' }))
 }
 
 const imgTask = () => {
-    return src('./src/assets/imgs/**.*')
+    return src('./src/assets/imgs/**')
         .pipe(imagemin([
             imagemin.gifsicle({ interlaced: true }),
             imagemin.jpegtran({ progressive: true }),
@@ -65,6 +65,7 @@ const imgTask = () => {
             imagemin.svgo()
         ]))
         .pipe(dest('./public/assets/img'))
+        
 }
 
 const initServer = () => {
@@ -75,10 +76,16 @@ const initServer = () => {
       })
 }
 
+const fontTask= () =>{
+return src("src/assets/fonts/**")
+    .pipe(dest("public/assets/fonts"))
+}
+
+exports.fonts = fontTask;
 exports.pug = pugTask;
 exports.imgs = imgTask;
 exports.sass = sassTask;
-exports.build = series(pugTask, imgTask, sassTask);
+exports.build = series(pugTask, imgTask, sassTask, fontTask), initServer;
 exports.default = series(pugTask, sassTask, initServer);
 
 const watcher = watch(["./src"])

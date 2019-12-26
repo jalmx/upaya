@@ -1,0 +1,43 @@
+.solution {
+
+  &__items {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__icon {
+    color: white;
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & a {
+      text-decoration: none;
+    }
+    &_font {
+      font-size: 3rem;
+      padding: 3rem;
+      background: $primary-color;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      border: 1px solid $primary-color;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $primary-color;
+        background: white;
+      }
+    }
+
+    &_text {
+      font-weight: normal;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

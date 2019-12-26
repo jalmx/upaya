@@ -1,0 +1,17 @@
+.cta{
+    text-decoration: none;
+    background-color: $accent;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    height: 3rem;
+    position: absolute;
+    z-index: 1000;
+    cursor: pointer;
+    top: 80%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &:hover{
+        box-shadow: 2px 2px 5px gray;
+    }
+}
