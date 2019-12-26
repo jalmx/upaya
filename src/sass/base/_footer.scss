@@ -1,0 +1,37 @@
+.footer{
+    background: #212121;
+    color: white;
+
+    &__top{
+        display: flex;
+        
+    }
+    &__logo{
+        justify-content: flex-start;
+        flex-grow: 1;
+
+        &:hover{
+            background: none;
+            color: white;
+        }
+    }
+
+    &__menu{
+
+        &__link{
+            font-size: .8rem;
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        align-items: center;
+
+        &__copy{
+            flex-grow: 1;
+        }
+        &__terms__menu{
+            display: flex;
+        }
+    }
+}

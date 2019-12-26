@@ -1,0 +1,36 @@
+.contact {
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__data {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      margin-bottom: 1rem;
+
+      & label {
+        font-size: 1.2rem;
+        color: $primary-color;
+      }
+
+      &:first-child input{
+        margin-right: 1rem;
+      }
+
+      & input,
+      & textarea {
+        flex-grow: 1;
+        margin-left: 1rem;
+        border-radius: 10px;
+        border: 1px solid $primary-color;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+}

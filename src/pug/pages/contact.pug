@@ -1,1 +1,12 @@
-h1 CONTACTO
+section.section.section__contact.contact#contact
+  h1.section__title.title__contact Contacto
+  form.form#form
+    .form__data
+      label(for="name") Nombre: 
+      input(type="text" id="name")
+    .form__data.email
+      label(for="email") Correo: 
+      input(type="email" id="email")
+    .form__data.message
+      label(for="message") Mensaje: 
+      textarea(name="message" id="message" rows="1")
