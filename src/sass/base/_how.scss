@@ -1,0 +1,42 @@
+.how {
+  //   background: #d4d4d4;
+  &__process {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    &__icon {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $primary-color;
+      padding: 1rem;
+      border-radius: 10%;
+      transition: all 0.3s;
+      border: 1px solid $primary-color;
+
+      &:nth-child(even) {
+        //   a las flechas les pongo el borde blanco
+        border: 1px solid white;
+
+        & i {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &:hover:nth-child(odd) {
+        color: white;
+        background: $primary-color;
+      }
+
+      & i {
+        font-size: 8rem;
+      }
+      & h2 {
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
