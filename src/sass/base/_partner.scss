@@ -1,18 +1,28 @@
-.partner{
-    background-color: #2e2e2e;
-    &__imgs{
-        display: flex;
-        justify-content: space-evenly;
-    }
+.partner {
+  background-color: #2e2e2e;
 
-    &__img{
-        width: 33.33%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-        & img{
-            display: inline-block;
-        }
+  &__imgs {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    @media only screen and (max-width: 1024px) {
+      overflow-x: auto;
     }
+  }
+
+  &__img {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    & img {
+      display: inline-block;
+      width: 80%;
+    }
+    &:last-child img {
+      background: red;
+      width: 60%;
+    }
+  }
 }

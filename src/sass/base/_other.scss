@@ -1,16 +1,25 @@
-.cta{
-    text-decoration: none;
-    background-color: $accent;
-    color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    height: 3rem;
+.cta {
+  text-decoration: none;
+  background-color: $accent;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 3rem;
+  text-transform: uppercase;
+  transition: all .3s;
+
+  &:hover {
+    box-shadow: 2px 2px 5px gray;
+  }
+
+  &__banner {
     position: absolute;
     z-index: 1000;
     cursor: pointer;
     top: 80%;
-    text-transform: uppercase;
-    &:hover{
-        box-shadow: 2px 2px 5px gray;
-    }
+  }
+
+  &__contact{
+      width: 6rem;
+  }
 }

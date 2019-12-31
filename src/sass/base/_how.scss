@@ -1,9 +1,10 @@
 .how {
-  //   background: #d4d4d4;
+     
   &__process {
     display: flex;
     justify-content: space-between;
     padding-top: 1rem;
+    overflow: auto;
     &__icon {
       margin-bottom: 1rem;
       display: flex;
