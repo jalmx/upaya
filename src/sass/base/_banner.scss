@@ -13,7 +13,7 @@
     position: absolute;
     left: 0;
     top: 0;
-  }
+  } 
 
   & h1 {
     position: absolute;
@@ -24,6 +24,9 @@
     
     @media only screen and (max-width: 670px) { 
         top: 50%;
+    }
+    @media only screen and (max-width: 400px) { 
+        top: 40%;
     }
   }
 }

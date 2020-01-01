@@ -44,6 +44,7 @@ const pugTask = () => {
     return src('./src/pug/**.pug')
         .pipe(plumber())
         .pipe(pug({
+            pretty: false,
             basedir: './src/pug'
         }))
         .pipe(dest('./public'))
@@ -52,7 +53,6 @@ const pugTask = () => {
 const sassTask = () => {
     return src('./src/sass/style.scss')
         .pipe(sass()).on('error', (e) => { console.log('error en la compilacion SASS', e) })
-        // .pipe(plumber())
         .pipe(postcss(postcssPlugins)).on('error', (e) => { console.log('error en la compilacion POST CSS'), e })
         .pipe(dest('./public/css'))
         .pipe(server.stream())
@@ -120,6 +120,10 @@ const robotTask = () => {
         .pipe(dest('public/'));
 }
 
+const faviconTask = () => {
+    return src('src/assets/favicon/**')
+        .pipe(dest('public/assets/favicon'))
+}
 const cacheTask = () => {
     return src('./public/**/**.html')
         .pipe(cachebust({
@@ -130,6 +134,7 @@ const cacheTask = () => {
 }
 
 exports.fonts = fontTask;
+exports.favicon = faviconTask;
 exports.humans = humanTask;
 exports.robot = robotTask;
 exports.cache = cacheTask;
@@ -137,13 +142,13 @@ exports.pug = pugTask;
 exports.sitemap = sitemapTask;
 exports.imgs = imgTask;
 exports.sass = sassTask;
-exports.build = series(pugTask, imgTask, sassTask, fontTask, humanTask, robotTask, cacheTask, sitemapTask, initServer);
+exports.build = series(pugTask, imgTask, sassTask, fontTask, humanTask, robotTask, sitemapTask, faviconTask, cacheTask, initServer);
 exports.default = series(pugTask, sassTask, initServer);
 
 const watcher = watch(["./src"])
 
 watcher.on('all', (path, stats) => {
-    
+
     if (stats.indexOf('sass') > 0) {
         sassTask()
         console.log('actualiza css');

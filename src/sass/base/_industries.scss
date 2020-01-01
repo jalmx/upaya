@@ -42,8 +42,15 @@
       justify-content: center;
       align-items: flex-end;
       padding-bottom: 2rem;
-      position: relative;
       margin-bottom: 1rem;
+      position: relative;
+
+      @media only screen and (max-width: 768px) {
+        width: 40%;
+      }
+      @media only screen and (max-width: 768px) {
+        width: 80%;
+      }
 
       & h2 {
         position: relative;
@@ -52,7 +59,7 @@
         text-align: center;
         background: rgba($color: $accent, $alpha: 0.5);
         font-weight: normal;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
         word-wrap: break-word;
       }
       &::after {
