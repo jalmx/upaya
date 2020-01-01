@@ -1,55 +1,123 @@
-.top{
-    display: flex;
-    justify-content: space-between;
-    background: $primary-color;
-}  .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: all .3s;
-    & a{
-        text-decoration: none;
-        color: white;
-    }
-    &:hover{
-        background: $accent;
-        color: black;
-    }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $primary-color;
 }
 
-.menu{
+.icon-menu {
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none;
+  &:hover {
+    color: $primary-color;
+    background: white;
+  }
+
+  @media only screen and (max-width: 860px) {
     display: flex;
+  }
+}
 
-    &__item{
-        list-style: none;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-right: 1rem;
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.8rem;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  & a {
+    text-decoration: none;
+    color: white;
+  }
+  &:hover {
+    background: $accent;
+    color: black;
+  }
+}
+
+.menu {
+  display: flex;
+  transition: all 0.3s;
+  @media only screen and (max-width: 860px) {
+    &__main {
+      display: none; //este debo quitar para que se vea, va df
     }
-
-    &__link{
-        text-decoration: none;
-        padding: 1rem;
-        line-height: 1.2;
+    &__responsive {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 1001;
+      background: rgba($color: $primary-color, $alpha: 0.97);
+      &::before {
+        font-family: icon;
+        content: "\e909";
+        font-size: 2.5rem;
+        transform: rotate(180deg);
         color: white;
-        position: relative;
-        text-transform: uppercase;
-    }
-
-    &__link:hover::after{
-        content: '';
         position: absolute;
-        background: $accent;
-        width: 100%;
-        height: 2px;
-        right: 0;
-        top: 80%;
-        z-index: 100;
+        top: 5%;
+        left: 15%;
+        background: white;
+        color: $primary-color;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0.6rem;
+      }
     }
+  }
+  &__item {
+    list-style: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    position: relative;
+
+    @media only screen and (max-width: 860px) {
+      & {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 1rem;
+    line-height: 1.2;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    @media only screen and (max-width: 860px) {
+      width: 80%;
+    }
+  }
+
+  &__link:hover::after {
+    content: "";
+    position: absolute;
+    background: $accent;
+    width: 100%;
+    height: 2px;
+    right: 0;
+    top: 80%;
+    z-index: 100;
+  }
 }

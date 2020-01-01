@@ -6,7 +6,7 @@
   border-radius: 10px;
   height: 3rem;
   text-transform: uppercase;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     box-shadow: 2px 2px 5px gray;
@@ -19,7 +19,7 @@
     top: 80%;
   }
 
-  &__contact{
-      width: 6rem;
+  &__contact {
+    display: inline-block;
   }
 }
